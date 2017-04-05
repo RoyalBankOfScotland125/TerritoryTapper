@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -10,8 +11,7 @@ public class ChangeTerritory : MonoBehaviour {
 	public GameObject blue;
 	public Text redWin;
 	public Text blueWin;
-	bool canTap;
-	Animator winAnim;
+	public bool canTap;
 	//Change me to change the touch phase used.
 	TouchPhase touchPhase = TouchPhase.Began;
 
@@ -20,7 +20,7 @@ public class ChangeTerritory : MonoBehaviour {
 	}
 
 	void Start(){
-		winAnim.GetComponent<Animator>();
+		
 
 	}
 	void Update() {
@@ -43,23 +43,14 @@ public class ChangeTerritory : MonoBehaviour {
 				if (touchedObject == red && canTap) {
 					red.transform.Translate (.25f, 0f, 0f, Space.World);
 					blue.transform.Translate (.25f, 0f, 0f, Space.World);
+					Handheld.Vibrate();
 				}
 				if (touchedObject == blue && canTap) {
 					blue.transform.Translate (-.25f, 0f, 0f, Space.World);
 					red.transform.Translate (-.25f, 0f, 0f, Space.World);
-
+					Handheld.Vibrate();
 				}
-				if (touchedObject.transform.position.x == 0) {
-					canTap = false;
-					if (touchedObject == blue) {
-						blueWin.CrossFadeAlpha (1f, 1.0f, true);
-						Debug.Log ("blue won");
-					}
-					if (touchedObject == red) {
-						redWin.CrossFadeAlpha (255f, 1.0f, true);
-						Debug.Log ("red won");
-					}
-				}
+				
 			}
 }
 }

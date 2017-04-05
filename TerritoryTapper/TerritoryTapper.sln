@@ -1,7 +1,7 @@
-﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TerritoryTapper", "Assembly-CSharp.csproj", "{76263287-B744-202E-8690-93F3F5A8C48E}"
+# Visual Studio 2008
+
+Project("{C38C8D94-CB70-6AD9-5646-77B8726410F4}") = "TerritoryTapper", "Assembly-CSharp.csproj", "{76263287-B744-202E-8690-93F3F5A8C48E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
