@@ -8,28 +8,32 @@ public class WinManager : MonoBehaviour {
 	public GameObject areaMan;
 	public ChangeTerritory terrMan;
 	Animator winAnim;
-	
+	GameObject redStatText;
+	GameObject blueStatText;
+	StatsManager stats;
 	// Use this for initialization
-	void Awake() {
+	void Start() {
 		winAnim = GetComponent<Animator>();
 		terrMan = areaMan.GetComponent<ChangeTerritory>();
+		stats = GameObject.Find ("PersistantStats").GetComponent<StatsManager>();
 	}
-	
-	/*
-	void Start() {
-		terrMan = areaMan.GetComponent<ChangeTerritory>();
-	}
-	*/
+
 	// Update is called once per frame
 	void Update () {
-		if(Red.position.x == 0) {
-			terrMan.canTap = false;
-			winAnim.SetBool("RedWins", true);
-			
-		}
-		else if(Blue.position.x == 0) {
-			terrMan.canTap = false;
-			winAnim.SetBool("BlueWins", true);
+		if(Red.position.x == 0 || Blue.position.x == 0){
+			if(Red.position.x == 0) {
+				terrMan.canTap = false;
+				winAnim.SetBool("RedWins", true);
+				stats.IncRedWins (1);
+			}
+			else if(Blue.position.x == 0) {
+				terrMan.canTap = false;
+				winAnim.SetBool("BlueWins", true);
+			}
+			stats.IncGamesPlayed(1);
+			stats.IncBlueTaps(terrMan.blueTaps);
+			stats.IncRedTaps(terrMan.redTaps);
+			stats.IncGameTime(terrMan.gameTime);
 		}
 	}
 }
