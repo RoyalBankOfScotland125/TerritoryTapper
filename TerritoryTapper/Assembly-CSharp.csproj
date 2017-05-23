@@ -48,6 +48,7 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\ChangeScene.cs" />
      <Compile Include="Assets\Scripts\ChangeTerritory.cs" />
+     <Compile Include="Assets\Scripts\CountDownTimer.cs" />
      <Compile Include="Assets\Scripts\RestartGame.cs" />
      <Compile Include="Assets\Scripts\StatsManager.cs" />
      <Compile Include="Assets\Scripts\TextManager.cs" />

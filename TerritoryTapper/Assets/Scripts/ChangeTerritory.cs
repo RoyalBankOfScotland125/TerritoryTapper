@@ -9,13 +9,11 @@ public class ChangeTerritory : MonoBehaviour {
 	Vector3 touchPosWorld;
 	public GameObject red;
 	public GameObject blue;
-	public Text redWin;
-	public Text blueWin;
 	public bool canTap;
 	public int redTaps;
 	public int blueTaps;
 	public bool hasTapped;
-	public float gameTime;
+	float gameTime;
 	//Change me to change the touch phase used.
 	TouchPhase touchPhase = TouchPhase.Ended;
 

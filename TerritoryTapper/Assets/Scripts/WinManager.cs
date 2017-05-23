@@ -7,9 +7,7 @@ public class WinManager : MonoBehaviour {
 	public Transform Red;
 	public GameObject areaMan;
 	public ChangeTerritory terrMan;
-	Animator winAnim;
-	GameObject redStatText;
-	GameObject blueStatText;
+	public Animator winAnim;
 	StatsManager stats;
 	// Use this for initialization
 	void Start() {
