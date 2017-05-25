@@ -13,7 +13,7 @@ public class ChangeTerritory : MonoBehaviour {
 	public int redTaps;
 	public int blueTaps;
 	public bool hasTapped;
-	float gameTime;
+	public float gameTime;
 	//Change me to change the touch phase used.
 	TouchPhase touchPhase = TouchPhase.Ended;
 

@@ -1,18 +1,38 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CountDownTimer : MonoBehaviour {
 
-	public bool;
+	public float countdown;
+	int countInc;
+	Text countDownText;
 
-	// Use this for initialization
 	void Start () {
-		timeLeft = 5f;
+		countDownText = GetComponent<Text> ();
+
+		countInc = 0;
 	}
-	
-	// Update is called once per frame
-	void Update () {
 		
+
+	void Update () {
+
+
+		if () {
+
+			countDownText.text = countdown - ((int)changeSecond) + "";
+
+
+		}
+		Debug.Log (countdown - ((int)changeSecond));
+		if (countdown - ((int)changeSecond) == 0) {
+			
+			countdownAnim.SetBool ("counterDone", true);
+			gameObject.SetActive (false);
+		}
+
 	}
+
+
 }
