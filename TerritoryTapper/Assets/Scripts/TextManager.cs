@@ -36,6 +36,6 @@ public class TextManager : MonoBehaviour {
 		totalTaps.text = stats.GetBlueTaps() + stats.GetRedTaps() + " Total Taps";
 		timePlayed.text = stats.GetGameTime () / 60 + " Minutes Played";
 		avgTapsTime.text = stats.GetRedTaps() + stats.GetBlueTaps() / (stats.GetGameTime () / 60) + " Average Taps per Minute";
-		avgGameTime.text = stats.GetGamesPlayed() / (stats.GetGameTime () / 60) + " Average Game Time";
+		avgGameTime.text = stats.GetGamesPlayed() / (stats.GetGameTime () / 60) + " Average Game Time (Seconds)";
 	}
 }

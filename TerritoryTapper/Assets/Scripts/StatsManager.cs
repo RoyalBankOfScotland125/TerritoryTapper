@@ -88,5 +88,13 @@ public class StatsManager : MonoBehaviour {
 		PlayerPrefs.SetFloat("gameTime", totalGameTime);
 		PlayerPrefs.Save ();
 	}
-		
+
+	public void Reset(){
+		gamesPlayed = 0;
+		totalGameTime = 0;
+		blueTapsTotal = 0;
+		redTapsTotal = 0;
+		redTotalWins = 0;
+		PlayerPrefs.DeleteAll ();
+	}
 }

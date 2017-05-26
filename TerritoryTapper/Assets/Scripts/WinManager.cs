@@ -13,7 +13,8 @@ public class WinManager : MonoBehaviour {
 	void Start() {
 		winAnim = GetComponent<Animator>();
 		terrMan = areaMan.GetComponent<ChangeTerritory>();
-		stats = GameObject.Find ("PersistantStats").GetComponent<StatsManager>();
+		stats = GameObject.Find("PersistantStats").GetComponent<StatsManager>();
+		gameObject.transform.Find ("Back").gameObject.SetActive(false);
 	}
 
 	// Update is called once per frame
@@ -28,10 +29,14 @@ public class WinManager : MonoBehaviour {
 				terrMan.canTap = false;
 				winAnim.SetBool("BlueWins", true);
 			}
+			Blue.Translate (.001f, 0, 0, Space.World);
+			Red.Translate (.001f, 0, 0, Space.World);
+			terrMan.stopTime ();
 			stats.IncGamesPlayed(1);
 			stats.IncBlueTaps(terrMan.blueTaps);
 			stats.IncRedTaps(terrMan.redTaps);
 			stats.IncGameTime(terrMan.gameTime);
+			gameObject.transform.Find ("Back").gameObject.SetActive (true);
 		}
 	}
 }

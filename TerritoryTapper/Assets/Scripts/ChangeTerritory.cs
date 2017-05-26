@@ -14,23 +14,24 @@ public class ChangeTerritory : MonoBehaviour {
 	public int blueTaps;
 	public bool hasTapped;
 	public float gameTime;
+	bool timeOn;
+	Animator canvasAnim;
 	//Change me to change the touch phase used.
 	TouchPhase touchPhase = TouchPhase.Ended;
-
-	void Awake(){
-		canTap = true;
-	}
 
 	void Start(){
 		blueTaps = 0;
 		redTaps = 0;
 		gameTime = 0f;
-		hasTapped = false;
+		canTap = false;
+		canvasAnim = GameObject.Find ("Canvas").GetComponent<Animator> ();
+		timeOn = false;
 	}
 	void Update() {
-		if (hasTapped) {
-			gameTime += Time.deltaTime;
-		}
+		if (timeOn) gameTime += Time.deltaTime;
+
+		canTap = canvasAnim.GetCurrentAnimatorStateInfo (0).IsName ("Playing");
+
 		//We check if we have more than one touch happening.
 		//We also check if the first touches phase is Ended (that the finger was lifted)
 		if (Input.touchCount > 0 && Input.GetTouch(0).phase == touchPhase) {
@@ -59,8 +60,12 @@ public class ChangeTerritory : MonoBehaviour {
 					Handheld.Vibrate();
 					blueTaps++;
 				}
-				hasTapped = true;
+				timeOn = true;
 			}
 		}
+	}
+
+	public void stopTime() {
+		timeOn = false;
 	}
 }

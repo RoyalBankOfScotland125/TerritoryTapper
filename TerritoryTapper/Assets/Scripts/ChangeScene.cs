@@ -2,12 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-public class ChangeScene : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
+public class ChangeScene : MonoBehaviour {
 
 	public void OnClick() {
 		switch (name) {
@@ -19,19 +15,13 @@ public class ChangeScene : MonoBehaviour {
 			break;
 		case "Stats":
 			SceneManager.LoadScene ("StatsMenu");
-			//GameObject.Find ("TextManager").GetComponent<TextManager> ().UpdateText ();
 			break;
 		case "Options":
-			SceneManager.LoadScene ("OptionsMenu");
+				GameObject.Find ("PersistantStats").GetComponent<StatsManager> ().Reset ();
+				Debug.Log ("Playerprefs deleted");
 			break;
 		default:
 			break;	
 		}
-	}
-
-
-	// Update is called once per frame
-	void Update () {
-		
 	}
 }

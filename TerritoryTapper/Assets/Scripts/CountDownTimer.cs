@@ -8,28 +8,24 @@ public class CountDownTimer : MonoBehaviour {
 	public float countdown;
 	int countInc;
 	Text countDownText;
+	Animator countAnim;
 
 	void Start () {
 		countDownText = GetComponent<Text> ();
-
-		countInc = 0;
+		countAnim = GetComponentInParent<Animator> ();
+		countDownText.text = countdown + "";
 	}
 		
 
 	void Update () {
-
-
-		if () {
-
-			countDownText.text = countdown - ((int)changeSecond) + "";
-
-
+		if(!(countdown <= 0f))
+		{
+			countDownText.text = (int) countdown + 1 + "";
+			countdown -= Time.deltaTime;
 		}
-		Debug.Log (countdown - ((int)changeSecond));
-		if (countdown - ((int)changeSecond) == 0) {
-			
-			countdownAnim.SetBool ("counterDone", true);
+		else{
 			gameObject.SetActive (false);
+			countAnim.SetBool ("Counting", false);
 		}
 
 	}
