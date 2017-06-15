@@ -18,7 +18,7 @@ public class CountDownTimer : MonoBehaviour {
 		
 
 	void Update () {
-		if(!(countdown <= 0f))
+		if(countdown > 0f)
 		{
 			countDownText.text = (int) countdown + 1 + "";
 			countdown -= Time.deltaTime;

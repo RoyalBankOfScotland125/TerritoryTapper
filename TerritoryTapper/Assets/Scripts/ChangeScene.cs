@@ -17,8 +17,7 @@ public class ChangeScene : MonoBehaviour {
 			SceneManager.LoadScene ("StatsMenu");
 			break;
 		case "Options":
-				GameObject.Find ("PersistantStats").GetComponent<StatsManager> ().Reset ();
-				Debug.Log ("Playerprefs deleted");
+			SceneManager.LoadScene ("OptionsMenu");
 			break;
 		default:
 			break;	

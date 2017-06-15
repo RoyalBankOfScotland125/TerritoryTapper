@@ -9,7 +9,6 @@ public class StatsManager : MonoBehaviour {
 	private int blueTapsTotal;
 	private int redTotalWins;
 	private float totalGameTime;
-
 	// Use this for initialization
 	 void Start () {
 		DontDestroyOnLoad (gameObject);
@@ -37,8 +36,11 @@ public class StatsManager : MonoBehaviour {
 			totalGameTime = PlayerPrefs.GetFloat ("gameTime");
 		else
 			totalGameTime = 0f;
+		
 	}
-	
+
+
+
 	public int GetGamesPlayed(){
 		return gamesPlayed;
 	}

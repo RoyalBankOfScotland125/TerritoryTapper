@@ -26,6 +26,7 @@ public class ChangeTerritory : MonoBehaviour {
 		canTap = false;
 		canvasAnim = GameObject.Find ("Canvas").GetComponent<Animator> ();
 		timeOn = false;
+
 	}
 	void Update() {
 		if (timeOn) gameTime += Time.deltaTime;

@@ -12,9 +12,7 @@ public class WinManager : MonoBehaviour {
 	// Use this for initialization
 	void Start() {
 		winAnim = GetComponent<Animator>();
-		terrMan = areaMan.GetComponent<ChangeTerritory>();
 		stats = GameObject.Find("PersistantStats").GetComponent<StatsManager>();
-		gameObject.transform.Find ("Back").gameObject.SetActive(false);
 	}
 
 	// Update is called once per frame
@@ -36,7 +34,7 @@ public class WinManager : MonoBehaviour {
 			stats.IncBlueTaps(terrMan.blueTaps);
 			stats.IncRedTaps(terrMan.redTaps);
 			stats.IncGameTime(terrMan.gameTime);
-			gameObject.transform.Find ("Back").gameObject.SetActive (true);
+
 		}
 	}
 }
